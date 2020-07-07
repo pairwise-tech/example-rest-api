@@ -15,7 +15,8 @@
     "tsc": "tsc",
     "test:unit": "jest",
     "test:watch": "jest --watch",
-    "test": "yarn format && yarn test:unit"
+    "test": "yarn format && yarn test:unit",
+    "gcp-build": "yarn build"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
