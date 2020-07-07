@@ -11,7 +11,7 @@ const app = express();
  * GET
  */
 app.get("/api", (req: Request, res: Response) => {
-  res.send("Got a GET request at /api");
+  res.send("Got a GET request at /api !!!");
 });
 
 /**
