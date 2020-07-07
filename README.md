@@ -2,7 +2,7 @@
 
 <br />
 
-A Express server which exposes an example HTTP API for the Pairwise Async Challenges.
+An Express server which exposes an example HTTP API for the Pairwise Async Challenges.
 
 ## Getting Started
 
