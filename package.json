@@ -6,17 +6,18 @@
   "private": true,
   "author": "Pairwise Team",
   "scripts": {
-    "start": "ts-node --files src/app.ts",
+    "prepare": "npm run gcp-build",
+    "gcp-build": "npm build",
     "build": "rimraf build && tsc",
-    "watch": "node build/app.js",
+    "start": "node build/app.js",
+    "watch": "ts-node --files src/app.ts",
     "prettier": "prettier --list-different './src/**/*.{ts,tsx,json}'",
     "prettier:fix": "prettier --write './src/**/*.{ts,tsx,json}'",
     "format": "yarn prettier:fix",
     "tsc": "tsc",
     "test:unit": "jest",
     "test:watch": "jest --watch",
-    "test": "yarn format && yarn test:unit",
-    "gcp-build": "yarn build"
+    "test": "yarn format && yarn test:unit"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
