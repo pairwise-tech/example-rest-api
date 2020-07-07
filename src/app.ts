@@ -8,31 +8,38 @@ import express, { Request, Response } from "express";
 const app = express();
 
 /**
+ * Index route.
+ */
+app.get("/", (req: Request, res: Response) => {
+  res.send("Pairwise Example HTTP API is online 🎉");
+});
+
+/**
  * GET
  */
 app.get("/api", (req: Request, res: Response) => {
-  res.send("Got a GET request at /api !!!");
+  res.send("Got a GET request at /api 🎉");
 });
 
 /**
  * POST
  */
 app.post("/api", (req: Request, res: Response) => {
-  res.send("Got a POST request at /api");
+  res.send("Got a POST request at /api 🎉");
 });
 
 /**
  * PUT
  */
 app.put("/api", (req: Request, res: Response) => {
-  res.send("Got a PUT request at /api");
+  res.send("Got a PUT request at /api 🎉");
 });
 
 /**
  * DELETE
  */
 app.delete("/api", (req: Request, res: Response) => {
-  res.send("Got a DELETE request at /api");
+  res.send("Got a DELETE request at /api 🎉");
 });
 
 /** ===========================================================================
