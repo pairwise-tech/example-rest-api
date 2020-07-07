@@ -1,0 +1,45 @@
+{
+  "name": "pairwise-example-http-api",
+  "description": "An example HTTP API for the Pairwise Async Challenges",
+  "version": "1.0.0",
+  "main": "build/main.js",
+  "private": true,
+  "author": "Pairwise Team",
+  "scripts": {
+    "start": "ts-node --files src/app.ts",
+    "build": "rimraf build && tsc",
+    "watch": "node build/app.js",
+    "prettier": "prettier --list-different './src/**/*.{ts,tsx,json}'",
+    "prettier:fix": "prettier --write './src/**/*.{ts,tsx,json}'",
+    "format": "yarn prettier:fix",
+    "tsc": "tsc",
+    "test:unit": "jest",
+    "test:watch": "jest --watch",
+    "test": "yarn format && yarn test:unit"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "express": "^4.17.1",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".test.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
