@@ -1,8 +1,8 @@
 steps:
-  - name: install
+  - name: node
     entrypoint: yarn
     args: ["install"]
-  - name: build
+  - name: node
     entrypoint: yarn
     args: ["build"]
   - name: "gcr.io/cloud-builders/gcloud"
