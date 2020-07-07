@@ -6,8 +6,8 @@
   "private": true,
   "author": "Pairwise Team",
   "scripts": {
-    "prepare": "npm run gcp-build",
-    "gcp-build": "npm build",
+    "prepare": "yarn gcp-build",
+    "gcp-build": "yarn build",
     "build": "rimraf build && tsc",
     "start": "node build/app.js",
     "watch": "ts-node --files src/app.ts",
