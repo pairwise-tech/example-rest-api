@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import cors from "cors";
 
 /** ===========================================================================
  * Setup Server
@@ -6,6 +7,9 @@ import express, { Request, Response } from "express";
  */
 
 const app = express();
+
+// Enable cors
+app.use(cors());
 
 /**
  * Index route.
