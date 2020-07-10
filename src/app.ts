@@ -72,9 +72,13 @@ app.delete("/api/:id", (req: Request, res: Response) => {
  */
 app.get("/api/headers", (req: Request, res: Response) => {
   const { headers } = req;
-  console.log(headers);
 
-  res.status(200).send("OK");
+  const token = headers.authorization;
+  if (token === "Bearer as7d68f89sa6f98as67fd98as6f9") {
+    res.status(200).send("OK!");
+  } else {
+    res.status(401).send("Try this token: as7d68f89sa6f98as67fd98as6f9");
+  }
 });
 
 /**
