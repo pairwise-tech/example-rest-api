@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import { stat } from "fs";
 
 /** ===========================================================================
  * Setup Server
@@ -64,6 +65,56 @@ app.delete("/api/:id", (req: Request, res: Response) => {
     message: "Got a DELETE request at /api 🎉",
   };
   res.json(response);
+});
+
+/**
+ * A test endpoint which checks request headers.
+ */
+app.get("/api/headers", (req: Request, res: Response) => {
+  const { headers } = req;
+  console.log(headers);
+
+  res.status(200).send("OK");
+});
+
+/**
+ * Special endpoint to return different status codes.
+ */
+app.get("/api/:code", (req: Request, res: Response) => {
+  const code = Number(req.params.code);
+
+  let message;
+  let statusCode;
+
+  switch (code) {
+    case 100:
+      statusCode = 100;
+      message = "Headers received! Client can continue to send request body.";
+      break;
+    case 200:
+      statusCode = 200;
+      message = "Successful HTTP Request!";
+      break;
+    case 300:
+      statusCode = 301;
+      message = "Resource has permanently moved! You need to be redirected.";
+      break;
+    case 400:
+      statusCode = 401;
+      message = "You are unauthorized to view this resource!";
+      break;
+    case 500:
+      statusCode = 500;
+      message = "The server encountered an error!";
+      break;
+    default: {
+      statusCode = 500;
+      message = `Unaccepted status code received: ${code}`;
+    }
+  }
+
+  // Return the response:
+  res.status(statusCode).send(message);
 });
 
 /** ===========================================================================
