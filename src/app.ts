@@ -34,7 +34,6 @@ app.get("/api", (req: Request, res: Response) => {
  */
 app.post("/api", (req: Request, res: Response) => {
   const { body } = req;
-  fetch;
   const response = {
     requestBody: body,
     message: "Got a POST request at /api 🎉",
