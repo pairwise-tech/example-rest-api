@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 /** ===========================================================================
  * Setup Server
@@ -10,6 +11,9 @@ const app = express();
 
 // Enable cors
 app.use(cors());
+
+// Enable parsing body
+app.use(bodyParser.json());
 
 /**
  * Index route.
@@ -29,14 +33,24 @@ app.get("/api", (req: Request, res: Response) => {
  * POST
  */
 app.post("/api", (req: Request, res: Response) => {
-  res.send("Got a POST request at /api 🎉");
+  const { body } = req;
+  const response = {
+    requestBody: body,
+    message: "Got a POST request at /api 🎉",
+  };
+  res.json(response);
 });
 
 /**
  * PUT
  */
 app.put("/api", (req: Request, res: Response) => {
-  res.send("Got a PUT request at /api 🎉");
+  const { body } = req;
+  const response = {
+    requestBody: body,
+    message: "Got a PUT request at /api 🎉",
+  };
+  res.json(response);
 });
 
 /**
