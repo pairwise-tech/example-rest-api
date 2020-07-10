@@ -34,6 +34,7 @@ app.get("/api", (req: Request, res: Response) => {
  */
 app.post("/api", (req: Request, res: Response) => {
   const { body } = req;
+  fetch;
   const response = {
     requestBody: body,
     message: "Got a POST request at /api 🎉",
@@ -54,10 +55,15 @@ app.put("/api", (req: Request, res: Response) => {
 });
 
 /**
- * DELETE
+ * DELETE a resource by id
  */
-app.delete("/api", (req: Request, res: Response) => {
-  res.send("Got a DELETE request at /api 🎉");
+app.delete("/api/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+  const response = {
+    requestId: id,
+    message: "Got a DELETE request at /api 🎉",
+  };
+  res.json(response);
 });
 
 /** ===========================================================================
