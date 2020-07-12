@@ -82,7 +82,7 @@ app.get("/api/headers", (req: Request, res: Response) => {
 /**
  * Special endpoint to return different status codes.
  */
-app.get("/api/:code", (req: Request, res: Response) => {
+app.get("/api/status/:code", (req: Request, res: Response) => {
   const code = Number(req.params.code);
 
   let message;
