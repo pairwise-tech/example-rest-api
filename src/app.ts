@@ -1,6 +1,5 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import bodyParser from "body-parser";
 
 /** ===========================================================================
  * Setup Server
@@ -9,11 +8,10 @@ import bodyParser from "body-parser";
 
 const app = express();
 
-// Enable cors
+// Server config
 app.use(cors());
-
-// Enable parsing body
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 /**
  * Index route.
