@@ -34,4 +34,4 @@ $ yarn test
 
 ## Deployment
 
-The app is deployed to Google Cloud App Engine using Google Cloud Build when any commits are pushed to the `master` branch.
+The app is deployed to Google Cloud App Engine using Google Cloud Build when any commits are pushed to the `main` branch.
